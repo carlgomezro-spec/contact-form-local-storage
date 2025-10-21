@@ -1,14 +1,40 @@
-<!-- Formulario de contacto - Local Storage
-Crear un formulario de contacto con los siguientes campos:
-Nombre
-Email
-Mensaje
-URL imagen
-Guardar en Firebase Firestore los datos de contacto enviados de cada usuario
-Mostrar los datos de los contactos guardados en el DOM -->
-Crea botón para borrar todos los contactos guardados en Firebase Firestore
-Crea botón para editar un contacto en concreto de Firebase Firestore
-Crea botón para borrar un contacto en concreto de Firebase Firestore
-Validar los campos del formulario
-Guardar datos del formulario que no haya sido rellenado/enviado del todo en local storage
-Crea botón para limpiar el formulario cacheado en Local storage
+# 📬 Contact Form App (Firebase + Vanilla JS)
+
+Una aplicación web sencilla pero completa para gestionar usuarios mediante un **formulario de contacto**, conectada con **Firebase Firestore**.  
+Incluye validaciones con **RegEx**, alertas modernas con **SweetAlert2**, y guardado automático del formulario en **LocalStorage** para no perder los datos al recargar.
+
+---
+
+## 🚀 Características principales
+
+✅ **CRUD completo (Crear, Leer, Actualizar y Eliminar)** conectado a Firebase Firestore.  
+✅ **Validaciones RegEx** para nombre, email y URL.  
+✅ **Alertas visuales** y confirmaciones usando [SweetAlert2](https://sweetalert2.github.io/).  
+✅ **Guardado automático en LocalStorage** mientras escribes.  
+✅ **Recuperación automática** de los datos al recargar la página.  
+✅ **Botón para limpiar formulario y cache local**.  
+✅ **Diseño responsivo y limpio** con CSS puro.  
+
+---
+
+## 🧩 Tecnologías utilizadas
+
+| Tecnología | Uso |
+|-------------|-----|
+| **HTML5 / CSS3 / JavaScript** | Estructura, estilo y lógica del proyecto |
+| **Firebase Firestore** | Base de datos NoSQL en la nube |
+| **SweetAlert2** | Alertas y modales bonitos |
+| **LocalStorage API** | Guardado temporal de datos del formulario |
+| **Normalize.css** | Estilos base consistentes entre navegadores |
+
+---
+## 🧠 Estructura del proyecto
+
+│
+├── 📄 index.html           # Página principal
+├── 📄 README.md            # Documentación del proyecto
+├── 📁 css/
+│   ├── normalize.css
+│   └── styles.css          # Estilos personalizados
+└── 📁 js/
+    └── script.js           # Lógica principal del formulario
