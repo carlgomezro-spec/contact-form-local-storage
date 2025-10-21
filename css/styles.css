@@ -129,16 +129,6 @@ background-color: var(--terciary);
     border: none;
 }
 
-/* .card-content button:first-of-type {
-    background-color: #4caf50;
-    color: white;
-}
-
-.card-content button:last-of-type {
-    background-color: #f44336;
-    color: white;
-} */
-
 footer {
     text-align: center;
     position: sticky;
