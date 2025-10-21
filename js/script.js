@@ -64,34 +64,42 @@ const printUser = (name, email, message, url, docId) => {
   let card = document.createElement('article');
   card.classList.add('card');
 
+  // Imagen
+  let imageContainer = document.createElement('div');
+  imageContainer.classList.add('card-image');
+
   let picture = document.createElement('img');
   picture.setAttribute('src', url);
+  imageContainer.appendChild(picture);
+
+  // Contenido de texto
+  let content = document.createElement('div');
+  content.classList.add('card-content');
 
   let caption = document.createElement('p');
-  caption.innerHTML = `
-    <strong>${name}</strong><br>
-    ${email}<br>
-    ${message}
-  `;
+  caption.innerHTML = `<strong>${name}</strong><br>${email}<br>${message}`;
 
   let id = document.createElement('p');
   id.innerHTML = `ID: ${docId}`;
 
-  // Botón Editar
+  content.appendChild(caption);
+  content.appendChild(id);
+
+  // Botones
   let editBtn = document.createElement('button');
   editBtn.textContent = "Editar";
   editBtn.addEventListener("click", () => loadUserForEdit(docId, name, email, message, url));
 
-  // Botón Eliminar
   let deleteBtn = document.createElement('button');
   deleteBtn.textContent = "Borrar";
   deleteBtn.addEventListener("click", () => deleteUser(docId));
 
-  card.appendChild(picture);
-  card.appendChild(caption);
-  card.appendChild(id);
-  card.appendChild(editBtn);
-  card.appendChild(deleteBtn);
+  content.appendChild(editBtn);
+  content.appendChild(deleteBtn);
+
+  // Armado de la tarjeta
+  card.appendChild(imageContainer);
+  card.appendChild(content);
 
   document.getElementById('users').appendChild(card);
 };

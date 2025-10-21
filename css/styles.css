@@ -17,6 +17,14 @@ body {
     font-family: "Lato", sans-serif;
     font-weight: var(--font-light);
     font-style: normal;
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1; /* Esto empuja el footer hacia abajo */
 }
 
 h1 {
@@ -43,30 +51,14 @@ h1:after {
   flex-wrap: wrap;
   gap: 10px;
   padding: 15px;
-  max-width: 1200px;   
+  max-width: 1000px;   
   margin: 0 auto;     /* centra horizontalmente */
   background-color: #f9f9f9; 
   border-radius: 10px;       
   box-shadow: 0 2px 8px rgba(0,0,0,0.1); /* sombra suave */
 }
 
-#users {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    
-}
-
-.card { 
-    padding: 25px;
-}
-
-.card img {
-    max-height: 200px;
-    max-width: 200px; 
-}
-
-#clear-cache {
+#submit {
   background-color: var(--secondary);
   color: white;
   border: none;
@@ -76,19 +68,87 @@ h1:after {
   cursor: pointer;
 }
 
-#clear-cache:hover {
-  background-color: var(--terciary);
+#submit:hover {
+background-color: var(--terciary);
 }
+
+#clear-cache{
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  margin-top: 0.5rem;
+  cursor: pointer;
+}
+
+
+#users {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px; /* separación entre tarjetas */
+    padding: 25px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    width: 250px;       /* ancho fijo de tarjeta */
+    height: 350px;      /* alto total */
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    background-color: #f9f9f9;
+}
+
+.card-image {
+    height: 50%;         /* mitad superior */
+    width: 100%;
+    overflow: hidden;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;   /* llena el contenedor y recorta si hace falta */
+}
+
+.card-content {
+    height: 50%;         /* mitad inferior */
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* texto arriba, botones abajo */
+}
+
+.card-content p {
+    margin: 0 0 5px 0;
+    font-size: 0.9rem;
+}
+
+.card-content button {
+    margin-top: 5px;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: none;
+}
+
+/* .card-content button:first-of-type {
+    background-color: #4caf50;
+    color: white;
+}
+
+.card-content button:last-of-type {
+    background-color: #f44336;
+    color: white;
+} */
 
 footer {
     text-align: center;
     position: sticky;
+    margin: 0;
     width: 100%;
     height: 100%;
     background-color: var(--secondary);
     color: #ffffff;
-}
-
-footer p {
-    padding: 15px;
 }
