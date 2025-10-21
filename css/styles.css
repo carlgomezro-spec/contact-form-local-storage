@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;900&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap');
+
+:root {
+    --background: #ffffff;
+    --primary: #4e4e4e;
+    --secondary: #ef662c;
+    --terciary: #d15a27;
+    --font-normal: 400;
+    --font-light: 300;
+    --font-bold: 900;
+}
+
+/* MIS CSS*/
+
+body {
+    background-color: var(--background);
+    font-family: "Lato", sans-serif;
+    font-weight: var(--font-light);
+    font-style: normal;
+}
+
+h1 {
+    padding: 15px;
+    color: var(--primary);
+    position: relative;
+    text-align: center;
+}
+
+h1:after {
+    content: "";
+    position: absolute;
+    left: 50%;               /* empieza en el centro */
+    bottom: -5px;            /* separa la línea del texto */
+    transform: translateX(-50%); /* centra realmente */
+    width: 50px;             /* ancho de la línea */
+    height: 4px;
+    background-color: var(--secondary)
+}
+
+#film-form {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 15px;
+  max-width: 1200px;   
+  margin: 0 auto;     /* centra horizontalmente */
+  background-color: #f9f9f9; 
+  border-radius: 10px;       
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1); /* sombra suave */
+}
+
+#users {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+}
+
+.card { 
+    padding: 25px;
+}
+
+.card img {
+    max-height: 200px;
+    max-width: 200px; 
+}
+
+#clear-cache {
+  background-color: var(--secondary);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  margin-top: 0.5rem;
+  cursor: pointer;
+}
+
+#clear-cache:hover {
+  background-color: var(--terciary);
+}
+
+footer {
+    text-align: center;
+    position: sticky;
+    width: 100%;
+    height: 100%;
+    background-color: var(--secondary);
+    color: #ffffff;
+}
+
+footer p {
+    padding: 15px;
+}
