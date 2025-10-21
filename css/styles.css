@@ -121,11 +121,6 @@ background-color: var(--terciary);
     justify-content: space-between; /* texto arriba, botones abajo */
 }
 
-.card-content p {
-    margin: 0 0 5px 0;
-    font-size: 0.9rem;
-}
-
 .card-content button {
     margin-top: 5px;
     cursor: pointer;
