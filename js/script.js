@@ -1,6 +1,4 @@
-// ---------------------------
 // CONFIGURACIÓN FIREBASE
-// ---------------------------
 const firebaseConfig = {
   apiKey: "AIzaSyDW0vYUIv7IdJ0_pycuAB76UJLYVRfKLQY",
   authDomain: "fir-web-3d27a.firebaseapp.com",
@@ -18,9 +16,8 @@ const FORM_KEY = "contactFormData"; // clave localStorage
 const form = document.getElementById("form");
 const submitBtn = document.getElementById("submit");
 
-// ---------------------------
+
 // CARGAR DATOS PARCIALES DEL FORMULARIO
-// ---------------------------
 window.addEventListener("DOMContentLoaded", () => {
   const savedData = JSON.parse(localStorage.getItem(FORM_KEY));
   if (savedData) {
@@ -43,11 +40,10 @@ form.addEventListener("input", () => {
   localStorage.setItem(FORM_KEY, JSON.stringify(data));
 });
 
-// ---------------------------
+
 // CREAR O ACTUALIZAR USUARIO
-// ---------------------------
 submitBtn.addEventListener("click", (e) => {
-  e.preventDefault();
+  e.preventDefault(); // Evita el comportamineto predeterminado del formulario
 
   const name = document.getElementById("name").value.trim();
   const email = document.getElementById("email").value.trim();
@@ -78,9 +74,8 @@ submitBtn.addEventListener("click", (e) => {
   resetForm();
 });
 
-// ---------------------------
+
 // FUNCIONES FIREBASE
-// ---------------------------
 const createUser = (user) => {
   db.collection("Usuarios").add(user)
     .then((docRef) => {
@@ -125,7 +120,7 @@ const deleteUser = (id) => {
 
 const readAll = () => {
   const usersContainer = document.getElementById("users");
-  usersContainer.innerHTML = ""; // limpiar antes de imprimir
+  usersContainer.innerHTML = ""; // borra la parte donde ya habías dibujado la lista de usuarios, para volver a dibujarla limpia.
 
   db.collection("Usuarios").get()
     .then(snapshot => {
@@ -136,9 +131,8 @@ const readAll = () => {
     .catch(err => console.error("Error leyendo usuarios:", err));
 };
 
-// ---------------------------
-// IMPRIMIR USUARIOS EN DOM
-// ---------------------------
+
+// IMPRIMIR LOS USUARIOS EN DOM
 const printUser = (data, id) => {
   const usersContainer = document.getElementById("users");
 
@@ -174,9 +168,8 @@ const printUser = (data, id) => {
   usersContainer.appendChild(card);
 };
 
-// ---------------------------
+
 // CARGAR DATOS PARA EDITAR
-// ---------------------------
 const loadUserForEdit = (id, data) => {
   document.getElementById("name").value = data.name;
   document.getElementById("email").value = data.email;
@@ -187,14 +180,11 @@ const loadUserForEdit = (id, data) => {
   submitBtn.textContent = "Guardar cambios";
 };
 
-// ---------------------------
 // RESET FORMULARIO
-// ---------------------------
 const resetForm = () => form.reset();
 
-// ---------------------------
+
 // BOTÓN LIMPIAR CACHE
-// ---------------------------
 const clearBtn = document.getElementById("clear-cache");
 
 clearBtn.addEventListener("click", () => {
