@@ -46,7 +46,7 @@ h1:after {
     background-color: var(--secondary)
 }
 
-#film-form {
+#form {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;

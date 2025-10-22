@@ -15,7 +15,7 @@ const db = firebase.firestore();
 
 let editingId = null; // guarda el ID del usuario que se está editando
 const FORM_KEY = "contactFormData"; // clave localStorage
-const form = document.getElementById("film-form");
+const form = document.getElementById("form");
 const submitBtn = document.getElementById("submit");
 
 // ---------------------------
